@@ -11,13 +11,14 @@ import Test.AbstractComponent.AbstractComponent;
 public class LoginPagePanorama extends AbstractComponent {
 
 	WebDriver driver;
-	
+
 	public LoginPagePanorama(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}
+
 	AbstractComponent reusableMethods = new AbstractComponent(driver);
 
 	@FindBy(css = "input[id=':r0:']")
@@ -60,8 +61,8 @@ public class LoginPagePanorama extends AbstractComponent {
 		submitButton.click();
 		waitFunctionVisibility(error);
 		String errorMessage = driver.findElement(By.cssSelector("div[role='status']")).getText();
-		
-		
+
+		System.out.println("Hi");
 		return errorMessage;
 
 	}
@@ -72,20 +73,20 @@ public class LoginPagePanorama extends AbstractComponent {
 		for (int i = 0; i < 6; i++) {
 			submitButton.click();
 			waitFunctionEnabledOrDisabled(button);
-				
+
 		}
-		String errorMessageLimiter= driver.findElement(error).getText();
+		String errorMessageLimiter = driver.findElement(error).getText();
 		return errorMessageLimiter;
+		// Hi
 		
 
 	}
-	
+
 	public void MerchantLogin(String email, String pass) throws InterruptedException {
 
 		userEmail.sendKeys(email);
 		submitButton.click();
 		reusableMethods.waitFunctionEnabledOrDisabled(button);
-		
 
 	}
 
