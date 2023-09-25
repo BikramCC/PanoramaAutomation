@@ -8,7 +8,7 @@
     <classes>
       <class name="Test.BaseTestPanorama">
         <methods>
-          <include name="LoginWithvalid"/>
+          <include name="categoryPagignation"/>
         </methods>
       </class> <!-- Test.BaseTestPanorama -->
     </classes>

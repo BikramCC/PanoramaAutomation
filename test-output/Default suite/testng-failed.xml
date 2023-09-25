@@ -5,7 +5,7 @@
     <classes>
       <class name="Test.BaseTestPanorama">
         <methods>
-          <include name="RolesAndPermissionsSearchUserByName"/>
+          <include name="Categories"/>
         </methods>
       </class> <!-- Test.BaseTestPanorama -->
     </classes>
