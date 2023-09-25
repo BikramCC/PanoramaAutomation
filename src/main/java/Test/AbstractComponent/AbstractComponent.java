@@ -16,7 +16,7 @@ public class AbstractComponent {
 
 	By cart = By.cssSelector("[routerlink='/dashboard/cart']");
 
-	static WebDriver driver;
+	public static WebDriver driver;
 
 	public AbstractComponent(WebDriver driver) {
 

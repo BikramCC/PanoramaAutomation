@@ -1,5 +1,10 @@
 package Test.PageObjectModel;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +34,15 @@ public class LoginPagePanorama extends AbstractComponent {
 
 	@FindBy(css = "button[type='Submit']")
 	WebElement submitButton;
+	
+	
+	@FindBy(xpath  = "//li[2]//div[2]//button[1]")
+	WebElement merchantButton;
+	
+	@FindBy(xpath  = "//input[@id='auth-login-password']")
+	WebElement passwordField;
+	
+	
 
 	By error = By.cssSelector("div[role='status']");
 	By button = By.cssSelector("button[type='Submit']");
@@ -53,7 +67,7 @@ public class LoginPagePanorama extends AbstractComponent {
 	}
 
 	public String LoginWithInValidData(String email, String pass) throws InterruptedException {
-
+		reusableMethods.waitFunctionVisibilityElement(userEmail);
 		userEmail.sendKeys(email);
 		submitButton.click();
 		reusableMethods.waitFunctionEnabledOrDisabled(button);
@@ -77,16 +91,18 @@ public class LoginPagePanorama extends AbstractComponent {
 		}
 		String errorMessageLimiter = driver.findElement(error).getText();
 		return errorMessageLimiter;
-		// Hi
-		
 
 	}
 
 	public void MerchantLogin(String email, String pass) throws InterruptedException {
-
+		reusableMethods.waitFunctionVisibilityElement(userEmail);
 		userEmail.sendKeys(email);
 		submitButton.click();
-		reusableMethods.waitFunctionEnabledOrDisabled(button);
+		reusableMethods.waitFunctionVisibilityElement(merchantButton);
+		merchantButton.click();
+		reusableMethods.waitFunctionVisibilityElement(passwordField);
+		passwordField.sendKeys(pass);
+		submitButton.click();
 
 	}
 

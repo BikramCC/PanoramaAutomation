@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Aug 06 18:46:56 IST 2023</td>
+<td>Started on:</td><td>Fri Sep 22 12:54:47 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>41 seconds (41350 ms)</td>
+<tr><td>Total time:</td><td>91 seconds (91465 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.BaseTestPanorama.RolesAndPermissionsSearchUserByName()'><b>RolesAndPermissionsSearchUserByName</b><br>Test class: Test.BaseTestPanorama</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at Test.BaseTestPanorama.RolesAndPermissionsSearchUserByName(BaseTestPanorama.java:74)
+<td title='Test.BaseTestPanorama.Categories()'><b>Categories</b><br>Test class: Test.BaseTestPanorama</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiAvatar-fallback.css-13y7ul3 (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;20.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.187, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/_f/9_g6mq590z1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50147}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50147/devtoo..., se:cdpVersion: 116.0.5845.187, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da6cc3922a2539dd4bf63a81a4d36a44
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at Test.AbstractComponent.AbstractComponent.waitFunctionVisibility(AbstractComponent.java:29)
+	at Test.BaseTestPanorama.Categories(BaseTestPanorama.java:85)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -109,13 +113,17 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace229318537", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace229318537'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at Test.BaseTestPanorama.RolesAndPermissionsSearchUserByName(BaseTestPanorama.java:74)
+</pre></div><a href='#' onClick='toggleBox("stack-trace849520318", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace849520318'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiAvatar-fallback.css-13y7ul3 (tried for 60 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;20.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.187, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/_f/9_g6mq590z1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50147}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50147/devtoo..., se:cdpVersion: 116.0.5845.187, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da6cc3922a2539dd4bf63a81a4d36a44
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at Test.AbstractComponent.AbstractComponent.waitFunctionVisibility(AbstractComponent.java:29)
+	at Test.BaseTestPanorama.Categories(BaseTestPanorama.java:85)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -143,8 +151,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>4</td>
-<td>Test.BaseTestPanorama@4d3ca6c7</td></tr>
+<td>60</td>
+<td>Test.BaseTestPanorama@b18c4</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -155,15 +163,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Test.BaseTestPanorama.LoginWithInvalidData()'><b>LoginWithInvalidData</b><br>Test class: Test.BaseTestPanorama</td>
+<td title='Test.BaseTestPanorama.LoginWithInvalidCredentials()'><b>LoginWithInvalidCredentials</b><br>Test class: Test.BaseTestPanorama</td>
+<td></td>
+<td>12</td>
+<td>Test.BaseTestPanorama@b18c4</td></tr>
+<tr>
+<td title='Test.BaseTestPanorama.MerchantLoginWithValidCredentials()'><b>MerchantLoginWithValidCredentials</b><br>Test class: Test.BaseTestPanorama</td>
 <td></td>
 <td>8</td>
-<td>Test.BaseTestPanorama@4d3ca6c7</td></tr>
+<td>Test.BaseTestPanorama@b18c4</td></tr>
 <tr>
-<td title='Test.BaseTestPanorama.LoginWithvalid()'><b>LoginWithvalid</b><br>Test class: Test.BaseTestPanorama</td>
+<td title='Test.BaseTestPanorama.LoginWithvalidCredentials()'><b>LoginWithvalidCredentials</b><br>Test class: Test.BaseTestPanorama</td>
 <td></td>
-<td>28</td>
-<td>Test.BaseTestPanorama@4d3ca6c7</td></tr>
+<td>10</td>
+<td>Test.BaseTestPanorama@b18c4</td></tr>
 </table><p>
 </body>
 </html>
