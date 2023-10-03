@@ -1,10 +1,13 @@
 package Test.PageObjectModel;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -168,7 +171,7 @@ public class CategoriesPanorama extends AbstractComponent {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pageCount));
 		driver.findElement(pageCount).click();
 		// Seting the page count to 50
-		WebElement count= driver.findElement(By.xpath("//li[text()='50']"));
+		WebElement count = driver.findElement(By.xpath("//li[text()='50']"));
 		wait.until(ExpectedConditions.visibilityOf(count));
 		count.click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
@@ -217,27 +220,74 @@ public class CategoriesPanorama extends AbstractComponent {
 
 	public void pagignation() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		resetFilter();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
-		WebElement nextPage = driver.findElement(By.cssSelector("button[aria-label='Go to next page']"));
-		WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(nextPage));
-		while (clickableElement.isEnabled()) {
-		    nextPage.click();
+		WebElement nextPageButton = driver
+				.findElement(By.xpath("// button[@title='Go to next page']//*[name()='svg']"));
+		boolean isEnabled = true;
+		WebElement value = driver.findElement(By.cssSelector(".MuiTablePagination-displayedRows.css-1vlt1u6"));
+		String currentPage = value.getText();
+		String[] extractedNumbers = new String[3]; // Assuming you expect up to 3 numbers
+		int index = 0;
+		String nextPageValue = currentPage.split("of")[1].trim();
+		System.out.println("Nextpagevalue " + nextPageValue);
+		Pattern pattern = Pattern.compile("\\d+");
+		// Create a matcher for the input string
+		Matcher matcher = pattern.matcher(currentPage);
+		String[] currentPageArray = new String[3];
+		// Find and store all matched numbers
+		while (matcher.find()) {
+			String extractedNumber = matcher.group();
+			System.out.println("Extracted number: " + extractedNumber);
+			currentPageArray[index] = extractedNumber;
+			index++;
 
-		    // Re-locate the nextPage element after navigation
-		 
-
-		    // Wait for the filterButton to become clickable on the new page
-		    wait.until(ExpectedConditions.elementToBeClickable(filterButton));
-		    js.executeScript("window.scroll(0,1000)");
-		    nextPage = driver.findElement(By.xpath("//button[@aria-label='Go to next page']"));
-		    wait.until(ExpectedConditions.visibilityOf(nextPage));
-		  
 		}
-		
-		
-		
+		String currentPageValue = currentPageArray[1];
+		System.out.println(currentPageValue);
+		int nextPageValueInt = Integer.parseInt(nextPageValue);
+		int currentPageValueInt = Integer.parseInt(currentPageValue);
+
+		// Check if the button is clickable (enabled) using ExpectedConditions
+
+//        boolean isClickable = wait.until(ExpectedConditions.elementToBeClickable(nextPage)) != null;
+//
+//        while (isClickable) {
+//           
+//            nextPage.click();
+//
+//            // Wait for a brief moment (you can adjust the sleep time as needed)
+//            try {
+//                Thread.sleep(3000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//
+//            // Scroll down to load more content
+//            js.executeScript("window.scrollBy(0, 500)");
+//
+//            // Check if the new "Next Page" button is clickable
+//            WebElement newNextPage = driver.findElement(By.xpath("//button[@aria-label='Go to next page']"));
+//            isClickable = wait.until(ExpectedConditions.elementToBeClickable(newNextPage)) != null;
+//            
+//            if (isClickable) {
+//                System.out.println("The button is clickable. Continuing to the next page.");
+//            } else {
+//                System.out.println("The button is not clickable. End of pagination.");
+//            }
+//        }
+
+//		while (isEnabled) {
+//			nextPage.click();
+//			Thread.sleep(3000);
+//			nextPage = driver.findElement(By.xpath("// button[@title='Go to next page']//*[name()='svg']"));
+//			js.executeScript("window.scrollBy(0, 500);");
+//			System.out.println("Pagignation" + nextPage.isEnabled());
+//			String disabledAttribute = nextPage.getAttribute("disabled");
+//			isEnabled = disabledAttribute == null || !disabledAttribute.equals("true");
+//		}
+
 //		boolean clickable = false;
 //		if (clickableElement != null) {
 //

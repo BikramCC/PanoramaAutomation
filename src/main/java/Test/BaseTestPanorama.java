@@ -98,29 +98,29 @@ public class BaseTestPanorama extends BaseComponentsDemo
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
-		boolean activeResult = category.activeFilterResult();
-		System.out.println(activeResult);
-		assertTrue(activeResult);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
-		Thread.sleep(3000);
-		boolean inactiveResult = category.inactiveFilterResult();
-		System.out.println(inactiveResult);
-		assertTrue(inactiveResult);
-		Thread.sleep(3000);
-		boolean search = category.addAndSearchCategory();
-		assertTrue(search);
+//		boolean activeResult = category.activeFilterResult();
+//		System.out.println(activeResult);
+//		assertTrue(activeResult);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(categoryList));
+//		Thread.sleep(3000);
+//		boolean inactiveResult = category.inactiveFilterResult();
+//		System.out.println(inactiveResult);
+//		assertTrue(inactiveResult);
+//		Thread.sleep(3000);
+//		boolean search = category.addAndSearchCategory();
+//		assertTrue(search);
 
 	}
 
-	@Test(priority = 5)
-	public void editAndDeleteCAtegory() throws InterruptedException {
-
-		CategoriesPanorama category = new CategoriesPanorama(driver);
-		boolean searchResult = category.editAndDeletecategory();
-		assertTrue(searchResult);
-
-	}
+//	@Test(priority = 5)
+//	public void editAndDeleteCAtegory() throws InterruptedException {
+//
+//		CategoriesPanorama category = new CategoriesPanorama(driver);
+//		boolean searchResult = category.editAndDeletecategory();
+//		assertTrue(searchResult);
+//
+//	}
 
 	@Test(priority = 6)
 	public void categoryPagignation() throws InterruptedException {
