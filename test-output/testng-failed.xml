@@ -9,6 +9,8 @@
       <class name="Test.BaseTestPanorama">
         <methods>
           <include name="categoryPagignation"/>
+          <include name="andAndSearchCategories"/>
+          <include name="editAndDeleteCAtegory"/>
         </methods>
       </class> <!-- Test.BaseTestPanorama -->
     </classes>
